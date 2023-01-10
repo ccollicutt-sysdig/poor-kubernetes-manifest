@@ -4,6 +4,7 @@ metadata:
   name: http-echo-poor-kubernetes
   labels:
     name: http-echo-poor-kubernetes
+
 ---
 apiVersion: v1
 kind: Service
@@ -39,3 +40,5 @@ spec:
         - "-text=http-echo"
         ports:
         - containerPort: 5678
+        securityContext:
+          runAsUser: 1200
