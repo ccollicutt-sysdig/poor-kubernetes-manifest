@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: http-echo
+  name: http-echo-poor-kubernetes-service
 spec:
   ports:
   - port: 80
@@ -12,7 +12,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: http-echo
+  name: http-echo-poor-kubernetes-deployment
 spec:
   selector:
     matchLabels:
@@ -24,7 +24,7 @@ spec:
         app: http-echo
     spec:
       containers:
-      - name: http-echo
+      - name: http-echo-poor-kubernetes-image
         image: hashicorp/http-echo
         args:
         - "-text=http-echo"
